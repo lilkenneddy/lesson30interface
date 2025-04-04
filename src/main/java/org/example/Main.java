@@ -4,14 +4,29 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Stack theStack = new Stack();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        theStack.addElementToStack(89);
+        theStack.addElementToStack(69);
+        theStack.addElementToStack(45);
+        theStack.addElementToStack(34);
+        System.out.println(" ");
+
+        System.out.println("Верхній елемент: " + theStack.readTop());
+        System.out.println(" ");
+
+        theStack.deleteElementFromStack();
+        System.out.println("Видалено: " + theStack.deleteElementFromStack());
+        System.out.println(" ");
+
+
+        while (!theStack.isEmpty())
+            int value = theStack.deleteElementFromStack();
+        System.out.println(value);
+        System.out.print(" ");
+
+
+        theStack.deleteElementFromStack();
+        System.out.println(" ");
     }
 }
