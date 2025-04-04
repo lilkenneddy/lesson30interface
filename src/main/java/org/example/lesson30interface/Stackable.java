@@ -1,14 +1,13 @@
 package org.example.lesson30interface;
 
-interface Stackable {
-    boolean isEmpty();        // Чи порожній стек?
+public interface Stackable {
+    boolean isEmpty();
 
-    boolean isFull();         // Чи повний стек?
+    boolean isFull();
 
-    void addElementToStack(int element); // Додати елемент
+    void addElementToStack(int element);
 
-    void deleteElementFromStack();
+    int deleteElementFromStack();
 
-    void readTop();
-
+    int readTop();
 }
