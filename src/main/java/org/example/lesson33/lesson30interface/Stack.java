@@ -1,4 +1,4 @@
-package org.example.lesson30interface;
+package org.example.lesson33.lesson30interface;
 
 import java.util.Optional;
 
@@ -14,17 +14,17 @@ public class Stack implements Stackable {
     }
 
     @Override
-    public void addElementToStack(int element) {
+    public void addElementToStack(int element) throws StackIsFullException {
         if (isFull()) {
-            throw new IllegalStateException("Стек переповнений");
+            throw new StackIsFullException();
         }
         stackArray[++top] = element;
     }
 
     @Override
-    public int deleteElementFromStack() {
+    public int deleteElementFromStack() throws StackIsEmptyException {
         if (isEmpty()) {
-            throw new IllegalStateException("Стек порожній");
+            throw new StackIsEmptyException();
         }
         return stackArray[top--];
     }
@@ -52,4 +52,5 @@ public class Stack implements Stackable {
     @Override
     public boolean isFull() {
         return top == maxSize - 1;
-    }}
+    }
+}

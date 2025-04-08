@@ -1,4 +1,4 @@
-package org.example.lesson30interface;
+package org.example.lesson30interface1;
 
 public interface Stackable {
     boolean isEmpty();

@@ -1,10 +1,12 @@
-import org.example.lesson30interface.Stack;
-import org.example.lesson30interface.Stackable;
+import org.example.lesson33.lesson30interface.Stack;
+import org.example.lesson33.lesson30interface.StackIsEmptyException;
+import org.example.lesson33.lesson30interface.StackIsFullException;
+import org.example.lesson33.lesson30interface.Stackable;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws StackIsFullException, StackIsEmptyException {
         Stackable stack = new Stack(5);
 
         stack.addElementToStack(10);
@@ -20,4 +22,5 @@ public class Main {
         stack.addElementToStack(50);
         stack.addElementToStack(60);
     }
+
 }
