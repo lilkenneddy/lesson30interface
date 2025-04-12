@@ -1,32 +1,26 @@
-package org.example;
+import org.example.lesson33.lesson30interface.Stack;
+import org.example.lesson33.lesson30interface.StackIsEmptyException;
+import org.example.lesson33.lesson30interface.StackIsFullException;
+import org.example.lesson33.lesson30interface.Stackable;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        Stack theStack = new Stack();
+    public static void main(String[] args) throws StackIsFullException, StackIsEmptyException {
+        Stackable stack = new Stack(5);
 
-        theStack.addElementToStack(89);
-        theStack.addElementToStack(69);
-        theStack.addElementToStack(45);
-        theStack.addElementToStack(34);
-        System.out.println(" ");
+        stack.addElementToStack(10);
+        stack.addElementToStack(20);
+        stack.addElementToStack(30);
 
-        System.out.println("Верхній елемент: " + theStack.readTop());
-        System.out.println(" ");
+        System.out.println("Верхній елемент: " + stack.readTop());
+        System.out.println("Дістати елемент: " + stack.deleteElementFromStack());
+        System.out.println("Чи порожній стек: " + stack.isEmpty());
+        System.out.println("Чи повний стек: " + stack.isFull());
 
-        theStack.deleteElementFromStack();
-        System.out.println("Видалено: " + theStack.deleteElementFromStack());
-        System.out.println(" ");
-
-
-        while (!theStack.isEmpty())
-            int value = theStack.deleteElementFromStack();
-        System.out.println(value);
-        System.out.print(" ");
-
-
-        theStack.deleteElementFromStack();
-        System.out.println(" ");
+        stack.addElementToStack(40);
+        stack.addElementToStack(50);
+        stack.addElementToStack(60);
     }
+
 }
