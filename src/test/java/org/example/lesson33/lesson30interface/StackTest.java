@@ -2,6 +2,8 @@ package org.example.lesson33.lesson30interface;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class StackTest {
@@ -45,6 +47,18 @@ class StackTest {
 
         // Then
         assertNotEquals(topElementAfterDeleted, topElement);
+
+
+        Optional<Integer> topEmpty = stack.getTopOptional();
+        System.out.println("Top of empty stack: " + topEmpty);
+
+        try {
+            stack.addElementToStack(42);
+        } catch (StackIsFullException e) {
+            System.out.println("Stack is full!");
+        }
+        Optional<Integer> topWithElement = stack.getTopOptional();
+        System.out.println("Top after adding 42: " + topWithElement);
     }
 
 
